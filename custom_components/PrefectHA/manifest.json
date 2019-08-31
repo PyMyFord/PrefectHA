@@ -1,0 +1,10 @@
+{
+    "domain": "prefect",
+    "name": "Prefect",
+    "documentation": "https://github.com/PyMyFord/PrefectHA",
+    "requirements": [
+      "prefect"
+    ],
+    "dependencies": [],
+    "codeowners": []
+  }
