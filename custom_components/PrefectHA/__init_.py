@@ -1,4 +1,5 @@
 """Support for My Ford Mobile vehicles."""
+from prefect import FordAPI
 import logging
 from datetime import timedelta
 
@@ -43,6 +44,9 @@ CONFIG_SCHEMA = vol.Schema(
 
 def setup(hass, config):
     """Set up the Prefect component."""
-    import prefect
-
     conf = config[DOMAIN]
+    MyFord = FordAPI()
+    MyFord.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
+
+
+    
