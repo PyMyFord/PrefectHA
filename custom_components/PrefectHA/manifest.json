@@ -3,7 +3,7 @@
     "name": "Prefect",
     "documentation": "https://github.com/PyMyFord/PrefectHA",
     "requirements": [
-      "prefect"
+      "ford-prefect"
     ],
     "dependencies": [],
     "codeowners": []
