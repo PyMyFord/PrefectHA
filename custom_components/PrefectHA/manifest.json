@@ -1,6 +1,6 @@
 {
-    "domain": "prefect",
-    "name": "Prefect",
+    "domain": "ford_prefect",
+    "name": "Ford Prefect",
     "documentation": "https://github.com/PyMyFord/PrefectHA",
     "requirements": [
       "ford-prefect"
