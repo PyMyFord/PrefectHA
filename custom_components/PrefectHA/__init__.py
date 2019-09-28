@@ -45,8 +45,6 @@ CONFIG_SCHEMA = vol.Schema(
 def setup(hass, config):
     """Set up the Prefect component."""
     conf = config[DOMAIN]
-    MyFord = FordAPI()
-    MyFord.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
-
-
-    
+    F = FordAPI()
+    F.authenticate(conf.get(CONF_USERNAME), conf(CONF_PASSWORD))
+    _LOGGER.debug("Successfully authenticated with prefect.")
