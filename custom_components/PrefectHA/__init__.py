@@ -46,6 +46,12 @@ def setup(hass, config):
     """Set up the Prefect component."""
     conf = config[DOMAIN]
     F = FordAPI()
-    F.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
+    
+    try:
+        F.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
+    except:
+        _LOGGER.error("Failed to login")
+        return False
+    
     _LOGGER.debug("Successfully authenticated with prefect.")
     return True
