@@ -1,5 +1,4 @@
 """Support for My Ford Mobile vehicles."""
-from prefect import FordAPI
 import logging
 from datetime import timedelta
 
@@ -10,7 +9,8 @@ from homeassistant.components.sensor import DOMAIN as SENSOR
 from homeassistant.components.switch import DOMAIN as SWITCH
 from homeassistant.const import (
     CONF_USERNAME,
-    CONF_PASSWORD
+    CONF_PASSWORD,
+    CONF_SCAN_INTERVAL
 )
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.discovery import load_platform
@@ -42,8 +42,18 @@ CONFIG_SCHEMA = vol.Schema(
 )
 
 def setup(hass, config):
+    from prefect import FordAPI
     """Set up the Prefect component."""
     conf = config[DOMAIN]
     F = FordAPI()
     F.authenticate(conf.get(CONF_USERNAME), conf(CONF_PASSWORD))
     _LOGGER.debug("Successfully authenticated with prefect.")
+    track_time_interval(hass, data.update, conf[CONF_SCAN_INTERVAL])
+    return true
+
+class FordPrefectData:
+    def __init__(self, *args, **kwargs):
+        self.__hass = hass
+        self.vehicles = []
+    def update(self, now, **kwargs):
+        from prefect import FordAPI
