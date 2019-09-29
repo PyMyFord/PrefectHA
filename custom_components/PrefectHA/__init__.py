@@ -48,7 +48,7 @@ def setup(hass, config):
     F = FordAPI()
     F.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
     _LOGGER.debug("Successfully authenticated with prefect.")
-    return true
+    return True
 
 class FordPrefectData:
     def __init__(self, *args, **kwargs):
