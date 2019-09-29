@@ -48,7 +48,6 @@ def setup(hass, config):
     F = FordAPI()
     F.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
     _LOGGER.debug("Successfully authenticated with prefect.")
-    track_time_interval(hass, data.update, conf[CONF_SCAN_INTERVAL])
     return true
 
 class FordPrefectData:
