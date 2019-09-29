@@ -46,7 +46,7 @@ def setup(hass, config):
     """Set up the Prefect component."""
     conf = config[DOMAIN]
     F = FordAPI()
-    F.authenticate(conf.get(CONF_USERNAME), conf(CONF_PASSWORD))
+    F.authenticate(conf(CONF_USERNAME), conf(CONF_PASSWORD))
     _LOGGER.debug("Successfully authenticated with prefect.")
     track_time_interval(hass, data.update, conf[CONF_SCAN_INTERVAL])
     return true
