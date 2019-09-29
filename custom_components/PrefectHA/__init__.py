@@ -10,20 +10,19 @@ from homeassistant.components.sensor import DOMAIN as SENSOR
 from homeassistant.components.switch import DOMAIN as SWITCH
 from homeassistant.const import (
     CONF_USERNAME,
-    CONF_PASSWORD,
-    CONF_SCAN_INTERVAL
+    CONF_PASSWORD
 )
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.discovery import load_platform
 from homeassistant.helpers.dispatcher import dispatcher_send
 from homeassistant.helpers.event import track_time_interval
 
-DOMAIN = "prefect"
+DOMAIN = "ford_prefect"
 DATA_UPDATED = "{}_data_updated".format(DOMAIN)
 
 _LOGGER = logging.getLogger(__name__)
 
-SUPPORTED_PLATFORMS = [LOCK, SENSOR, SWITCH]
+SUPPORTED_PLATFORMS = [SENSOR]
 
 DEFAULT_INTERVAL = timedelta(days=7)
 
