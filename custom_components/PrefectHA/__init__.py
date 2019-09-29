@@ -49,10 +49,3 @@ def setup(hass, config):
     F.authenticate(conf[CONF_USERNAME], conf[CONF_PASSWORD])
     _LOGGER.debug("Successfully authenticated with prefect.")
     return True
-
-class FordPrefectData:
-    def __init__(self, *args, **kwargs):
-        self.__hass = hass
-        self.vehicles = []
-    def update(self, now, **kwargs):
-        from prefect import FordAPI
